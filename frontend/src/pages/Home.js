@@ -13,7 +13,7 @@ export default function Home() {
       <div>
         <Carousel/>
       </div>
-      <div>
+      <div className="m-3">
         <Food />
       </div>
       <div>
