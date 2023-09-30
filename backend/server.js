@@ -15,6 +15,7 @@ const morgan = require('morgan')
 
 //routers
 
+const restaurantRouter = require('./routes/Restaurant')
 
 
 // create application object
@@ -35,6 +36,8 @@ app.use(cors())
 // mount cors() -> cross origin request middleware
 app.use(morgan('dev'))
 
+// all requests for endpoints that begin with '/restaurant'
+app.use('/restaurant', restaurantRouter)
 
 ///////////////////////////////
 // ROUTES
