@@ -10,4 +10,3 @@ router.delete("/:id", restaurantController.delete);
 router.put("/:id", restaurantController.update);
 
 module.exports = router;
-
