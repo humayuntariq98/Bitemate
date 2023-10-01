@@ -1,7 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import LoginButton from './Auth/LoginButton'
+import LogoutButton from './Auth/LogoutButton'
+import { useAuth0 } from '@auth0/auth0-react'
 
 export default function Navbar() {
+  const {isLoading, isAuthenticated, user} = useAuth0()
+  const datafrom = useAuth0()
+  console.log(datafrom,"seeinf data")
   return (
     <div>
     <nav className="navbar navbar-expand-lg navbar-dark bg-danger">
@@ -21,6 +27,24 @@ export default function Navbar() {
       </ul>
     </div>
   </div>
+
+    {
+      !isLoading? (<>
+      
+      
+        <div>
+        {isAuthenticated? (
+        <> <Link to="/profile">My Profile</Link> <LogoutButton/>
+        
+        </>
+        
+        ):
+        (<LoginButton/>)}
+        </div>
+      
+      </>) : null
+    }
+
 </nav>
   </div>
   )
