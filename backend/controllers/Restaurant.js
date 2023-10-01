@@ -1,4 +1,4 @@
-const Restaurant = require("../models/Restaurant");
+const { model: Restaurant } = require("../models/Restaurant");
 
 module.exports = {
   index,
