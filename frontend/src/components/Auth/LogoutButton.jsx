@@ -1,10 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
-
 export default function LogoutButton() {
-    const {logout} = useAuth0()
+  const { logout } = useAuth0();
 
-    return(
-        <button type="button" class="btn btn-outline-white" onClick={()=>logout()}>LogOut</button>
-    )
+  return (
+    <button
+      type="button"
+      className="btn btn-outline-white"
+      onClick={() => logout()}
+    >
+      LogOut
+    </button>
+  );
 }

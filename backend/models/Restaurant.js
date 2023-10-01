@@ -9,8 +9,11 @@ const FoodItemSchema = new Schema({
 
 const RestaurantSchema = new Schema({
   name: { type: String },
+  slogan: { type: String },
   address: { type: String },
   menu: [FoodItemSchema],
+  bannerImage: { type: String },
+  cardImage: { type: String },
 });
 
 module.exports = {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Food from "../components/Food";
@@ -10,6 +10,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    console.log("fetching");
     getRestaurant();
   }, []);
 
@@ -25,14 +26,16 @@ export default function Home() {
   return (
     <div>
       <div>
-        <Navbar />
-      </div>
-      <div>
         <Carousel />
       </div>
-      <div className="m-3">
+      <div>
         {restaurant?.map((r) => (
-          <Food name={r.name}></Food>
+          <Food
+            key={r._id}
+            name={r.name}
+            slogan={r.slogan}
+            restaurantId={r._id}
+          ></Food>
         ))}
       </div>
       <div>

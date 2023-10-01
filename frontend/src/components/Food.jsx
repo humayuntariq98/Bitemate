@@ -1,38 +1,32 @@
 import React from "react";
+import { titleCase } from "title-case";
+import { Link } from "react-router-dom";
 
-export default function Food({ name, address }) {
+export default function Food({ name, slogan, restaurantId }) {
   return (
-    <div>
-      <div>
+    <div style={{ display: "inline-block", width: "25%" }}>
+      <Link to={`/restaurant/${restaurantId}`}>
         <div
           className="card mt-3"
-          style={{ width: "18rem", "max-height": "360px" }}
+          style={{ width: "18rem", maxHeight: "360px" }}
         >
           <img src="/foodImages/steak.jpg" className="card-img-top" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">{name}</h5>
-            <p className="card-text">Some Important text</p>
-            <div className="container w-100">
-              <select className="m-2 h-100 bg-danger rounded">
-                {Array.from(Array(6), (e, i) => {
-                  return (
-                    <option key={i + 1} value={i + 1}>
-                      {i + 1}
-                    </option>
-                  );
-                })}
-              </select>
-
-              <select className="m-2 h-100 bg-danger rounded">
-                <option value="half">Half</option>
-                <option value="full">Full</option>
-              </select>
-
-              <div className="d-inline h-100">Total Price</div>
-            </div>
+            <h5
+              style={{ color: "white", cursor: "pointer" }}
+              className="card-title"
+            >
+              {name}
+            </h5>
+            <p
+              style={{ color: "white", cursor: "pointer" }}
+              className="card-text"
+            >
+              {titleCase(slogan)}
+            </p>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
