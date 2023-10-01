@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Food() {
+export default function Food({ name, address }) {
   return (
     <div>
       <div>
@@ -10,7 +10,7 @@ export default function Food() {
         >
           <img src="/foodImages/steak.jpg" className="card-img-top" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title">{name}</h5>
             <p className="card-text">Some Important text</p>
             <div className="container w-100">
               <select className="m-2 h-100 bg-danger rounded">

@@ -15,6 +15,7 @@ const morgan = require("morgan");
 
 //routers
 const restaurantRouter = require("./routes/restaurant");
+const orderRouter = require("./routes/order");
 
 // create application object
 const app = express();
@@ -36,6 +37,7 @@ app.use(morgan("dev"));
 
 // all requests for endpoints that begin with '/restaurant'
 app.use("/restaurant", restaurantRouter);
+app.use("/order", orderRouter);
 
 ///////////////////////////////
 // ROUTES
