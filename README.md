@@ -6,6 +6,8 @@ A mern-stack food delivery application, that allows users to place orders from t
 
 ## Restaurant Detail ![Alt text](<Screen Shot 2023-10-02 at 4.19.46 AM.png>)
 
+# Link to Application
+[Bitemate](https://prismatic-monstera-a56357.netlify.app/)
 
 # Technologies Used
 1. MongoDB
