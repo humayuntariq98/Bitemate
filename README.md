@@ -1,10 +1,13 @@
 # Bitemate
 A mern-stack food delivery application, that allows users to place orders from their favorite restaurants. 
 
-#Deployed Application
+# Screenshots
+## Home Page![Alt text](<Screen Shot 2023-10-02 at 4.19.03 AM.png>)
+
+## Restaurant Detail ![Alt text](<Screen Shot 2023-10-02 at 4.19.46 AM.png>)
 
 
-#Technologies Used
+# Technologies Used
 1. MongoDB
 2. Express js
 3. React
@@ -12,5 +15,3 @@ A mern-stack food delivery application, that allows users to place orders from t
 5. Bootstrap 5
 6. AccuWeather API
 7. Auth0
-
-
