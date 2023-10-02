@@ -13,7 +13,7 @@ const RestaurantSchema = new Schema({
   address: { type: String },
   menu: [FoodItemSchema],
   bannerImage: { type: String },
-  cardImage: { type: String },
+cardImage: { type: String },
 });
 
 module.exports = {

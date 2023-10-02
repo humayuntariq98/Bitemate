@@ -50,12 +50,14 @@ async function createOrUpdate(req, res, next) {
       res.json(currentOrder);
     } else {
       //if the user does not alrady have a cart, create it.
+
       const cartData = {
         orderItems: [{ foodItem: orderItem, quantity: 1 }],
         userId,
         totalAmount: orderItem.price,
         restaurant: restaurantId,
       };
+      console.log("cart data", cartData);
       const newOrder = await Order.create(cartData);
       res.json(newOrder);
     }

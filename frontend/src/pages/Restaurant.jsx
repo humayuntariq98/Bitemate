@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { fetchRestaurantById } from "../services/restaurant";
-import Loader from "../components/Loader/Loader";
 import { useParams } from "react-router";
 import MenuItem from "../components/MenuItem";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Restaurant() {
   const [restaurant, setRestaurant] = useState(null);
   const [loading, setLoading] = useState(false);
   const { restaurantId } = useParams();
-  console.log("parans", restaurantId);
+  const { user } = useAuth0();
+  const [existingOrders, setExistingOrders] = useState(null);
+
+  
+
   useEffect(() => {
     getRestaurant(restaurantId);
   }, [restaurantId]);
@@ -34,8 +38,16 @@ export default function Restaurant() {
         src={restaurant?.bannerImage}
       ></img>
       <h5>{restaurant?.name}</h5>
-      {restaurant?.menu?.map(({ name, price, image }) => (
-        <MenuItem name={name} price={price} image={image}></MenuItem>
+      {restaurant?.menu?.map(({ name, price, image, _id }) => (
+        <MenuItem
+          key={_id}
+          name={name}
+          price={price}
+          image={image}
+          restaurantId={restaurant?._id}
+          itemId={_id}
+          userId={user?.sub}
+        ></MenuItem>
       ))}
     </div>
   );
