@@ -35,6 +35,7 @@ export default function Home() {
             name={r.name}
             slogan={r.slogan}
             restaurantId={r._id}
+            restaurantImage={r.cardImage}
           ></Food>
         ))}
       </div>

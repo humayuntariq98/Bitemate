@@ -68,7 +68,7 @@ export default function Restaurant() {
     <div className="container">
       <img
         className="img-fluid banner"
-        style={{ width: "100%", height: "200px" }}
+        style={{ width: "100%", height: "200px", marginTop: "20px" }}
         alt="banner for restaurant"
         src={restaurant?.bannerImage}
       ></img>
