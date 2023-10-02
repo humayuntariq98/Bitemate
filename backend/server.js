@@ -14,7 +14,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 
 //routers
-const restaurantRouter = require("./routes/restaurant");
+const restaurantRouter = require("./routes/Restaurant");
 const orderRouter = require("./routes/order");
 
 // create application object

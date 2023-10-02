@@ -12,14 +12,14 @@ const getOrdersByUser = async (req, res) => {
 const getExistingOrderForRestaurant = async (req, res) => {
   try {
     const existingIncompleteOrder = await Order.find({
-      restaurant: req.body.restaurant,
+      restaurant: req.params.restaurantId,
       completed: false,
-      userId: req.body.usreId,
+      userId: req.params.userId,
     });
     if (existingIncompleteOrder.length) {
       return res.status(200).json(existingIncompleteOrder);
     }
-    return res.status(400).send({ message: "order not found" });
+    return res.status(200).send({ message: "order not found" });
   } catch (error) {
     res.status(500).send(error);
   }
@@ -85,8 +85,8 @@ const destroy = async (req, res) => {
 const updateItemQuantity = async (req, res) => {
   try {
     const order = await Order.findById(req.body._id);
-    if (order) {
-      res.status(404).json({ message: "order not found " });
+    if (!order) {
+      return res.status(200).json({ message: "order not found " });
     }
     const itemInOrder = order.orderItems.findIndex(
       (item) => item._id === req.body.itemId

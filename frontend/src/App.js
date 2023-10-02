@@ -9,6 +9,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 import Profile from "./pages/profile";
 
+
 export default function App() {
   return (
     <>
