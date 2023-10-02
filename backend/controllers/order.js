@@ -32,24 +32,23 @@ async function createOrUpdate(req, res, next) {
       restaurant: restaurantId,
     });
     if (currentOrder) {
-      //if there is a cart for the user, find the index of the product that has an id equal to product._id sent by req.body
+      
       const isItemAlreadyInOrder = currentOrder.orderItems.findIndex((p) =>
         p.foodItem._id.equals(orderItem._id)
       );
       if (isItemAlreadyInOrder !== -1) {
-        //findIndex returns -1 if no product found, if that is not the case, update the quantity of the product at the found index
+       
         currentOrder.orderItems[isItemAlreadyInOrder].quantity++;
       } else {
         currentOrder.orderItems.push({ foodItem: orderItem, quantity: 1 });
       }
-      //use the total price calculation function to update the carts total amount
+
       currentOrder.totalAmount = calculateTotal(currentOrder);
       await Order.findByIdAndUpdate(currentOrder._id, currentOrder, {
         new: true,
       });
       res.json(currentOrder);
     } else {
-      //if the user does not alrady have a cart, create it.
 
       const cartData = {
         orderItems: [{ foodItem: orderItem, quantity: 1 }],
