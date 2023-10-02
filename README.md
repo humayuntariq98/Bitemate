@@ -1,6 +1,5 @@
 # Bitemate
-A mern-stack food delivery application, that allows users to place orders from their favorite restaurants. 
-
+A mern-stack food delivery application, that allows users to login, browse through their favorite restaurants and place orders.
 # Screenshots
 ## Home Page![Alt text](<Screen Shot 2023-10-02 at 4.19.03 AM.png>)
 
